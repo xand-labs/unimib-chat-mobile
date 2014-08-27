@@ -1,0 +1,79 @@
+2014-08-23 13:22:41.405 unimib-chat-mobile[2130:70b] Multi-tasking -> Device: YES, App: YES
+2014-08-23 13:22:41.567 unimib-chat-mobile[2130:70b] Unlimited access to network resources
+2014-08-23 13:22:42.648 unimib-chat-mobile[2130:70b] [CDVTimer][keyboard] 0.087023ms
+2014-08-23 13:22:42.648 unimib-chat-mobile[2130:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-08-23 13:22:42.649 unimib-chat-mobile[2130:70b] [CDVTimer][statusbar] 0.620008ms
+2014-08-23 13:22:42.649 unimib-chat-mobile[2130:70b] [CDVTimer][TotalPluginStartup] 1.994967ms
+2014-08-23 13:22:43.051 unimib-chat-mobile[2130:70b] Resetting plugins due to page load.
+2014-08-23 13:22:43.898 unimib-chat-mobile[2130:70b] Finished load of: file:///Users/alfioemanuele/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/7ACBD27D-263B-4DE0-972B-456D072C66A8/unimib-chat-mobile.app/www/index.html#/app/playlists
+2014-08-23 13:22:44.230 unimib-chat-mobile[2130:70b] THREAD WARNING: ['Device'] took '17.301025' ms. Plugin should use a background thread.
+2014-08-23 13:22:44.411 unimib-chat-mobile[2130:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2014-08-23 13:22:44.412 unimib-chat-mobile[2130:70b] Setting the WebView's frame to {{0, 0}, {320, 480}}
+2014-08-23 13:22:44.418 unimib-chat-mobile[2130:70b] THREAD WARNING: ['InAppBrowser'] took '185.312256' ms. Plugin should use a background thread.
+2014-08-23 13:22:45.438 unimib-chat-mobile[2130:70b] setting movie path: 
+2014-08-23 13:26:42.382 unimib-chat-mobile[2467:70b] Multi-tasking -> Device: YES, App: YES
+2014-08-23 13:26:42.389 unimib-chat-mobile[2467:70b] Unlimited access to network resources
+2014-08-23 13:26:42.405 unimib-chat-mobile[2467:70b] [CDVTimer][keyboard] 0.064015ms
+2014-08-23 13:26:42.406 unimib-chat-mobile[2467:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-08-23 13:26:42.407 unimib-chat-mobile[2467:70b] [CDVTimer][statusbar] 0.541985ms
+2014-08-23 13:26:42.407 unimib-chat-mobile[2467:70b] [CDVTimer][TotalPluginStartup] 1.565993ms
+2014-08-23 13:26:42.444 unimib-chat-mobile[2467:70b] Resetting plugins due to page load.
+2014-08-23 13:26:42.579 unimib-chat-mobile[2467:70b] Finished load of: file:///Users/alfioemanuele/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/7ACBD27D-263B-4DE0-972B-456D072C66A8/unimib-chat-mobile.app/www/index.html#/app/playlists
+2014-08-23 13:26:42.769 unimib-chat-mobile[2467:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2014-08-23 13:26:42.769 unimib-chat-mobile[2467:70b] Setting the WebView's frame to {{0, 0}, {320, 480}}
+2014-08-23 13:26:42.773 unimib-chat-mobile[2467:70b] THREAD WARNING: ['InAppBrowser'] took '29.864746' ms. Plugin should use a background thread.
+2014-08-23 13:26:42.794 unimib-chat-mobile[2467:70b] Warning: Attempt to dismiss from view controller <MainViewController: 0xa2855f0> while a presentation or dismiss is in progress!
+2014-08-23 13:26:43.167 unimib-chat-mobile[2467:70b] webView:didFailLoadWithError - 102: Frame load interrupted
+2014-08-23 13:28:59.357 unimib-chat-mobile[2787:70b] Multi-tasking -> Device: YES, App: YES
+2014-08-23 13:28:59.363 unimib-chat-mobile[2787:70b] Unlimited access to network resources
+2014-08-23 13:28:59.380 unimib-chat-mobile[2787:70b] [CDVTimer][keyboard] 0.056982ms
+2014-08-23 13:28:59.381 unimib-chat-mobile[2787:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-08-23 13:28:59.381 unimib-chat-mobile[2787:70b] [CDVTimer][statusbar] 0.417948ms
+2014-08-23 13:28:59.381 unimib-chat-mobile[2787:70b] [CDVTimer][TotalPluginStartup] 1.410007ms
+2014-08-23 13:28:59.418 unimib-chat-mobile[2787:70b] Resetting plugins due to page load.
+2014-08-23 13:28:59.597 unimib-chat-mobile[2787:70b] Finished load of: file:///Users/alfioemanuele/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/7ACBD27D-263B-4DE0-972B-456D072C66A8/unimib-chat-mobile.app/www/index.html#/app/playlists
+2014-08-23 13:28:59.803 unimib-chat-mobile[2787:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2014-08-23 13:28:59.804 unimib-chat-mobile[2787:70b] Setting the WebView's frame to {{0, 0}, {320, 480}}
+2014-08-23 13:28:59.807 unimib-chat-mobile[2787:70b] THREAD WARNING: ['InAppBrowser'] took '22.409912' ms. Plugin should use a background thread.
+2014-08-23 13:28:59.824 unimib-chat-mobile[2787:70b] Warning: Attempt to dismiss from view controller <MainViewController: 0xb9cd120> while a presentation or dismiss is in progress!
+2014-08-23 13:29:00.053 unimib-chat-mobile[2787:70b] webView:didFailLoadWithError - 102: Frame load interrupted
+2014-08-23 13:29:36.326 unimib-chat-mobile[3103:70b] Multi-tasking -> Device: YES, App: YES
+2014-08-23 13:29:36.332 unimib-chat-mobile[3103:70b] Unlimited access to network resources
+2014-08-23 13:29:36.349 unimib-chat-mobile[3103:70b] [CDVTimer][keyboard] 0.061035ms
+2014-08-23 13:29:36.350 unimib-chat-mobile[3103:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-08-23 13:29:36.350 unimib-chat-mobile[3103:70b] [CDVTimer][statusbar] 0.398993ms
+2014-08-23 13:29:36.350 unimib-chat-mobile[3103:70b] [CDVTimer][TotalPluginStartup] 1.312971ms
+2014-08-23 13:29:36.387 unimib-chat-mobile[3103:70b] Resetting plugins due to page load.
+2014-08-23 13:29:36.547 unimib-chat-mobile[3103:70b] Finished load of: file:///Users/alfioemanuele/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/7ACBD27D-263B-4DE0-972B-456D072C66A8/unimib-chat-mobile.app/www/index.html#/app/playlists
+2014-08-23 13:29:36.777 unimib-chat-mobile[3103:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2014-08-23 13:29:36.777 unimib-chat-mobile[3103:70b] Setting the WebView's frame to {{0, 0}, {320, 480}}
+2014-08-23 13:29:36.781 unimib-chat-mobile[3103:70b] THREAD WARNING: ['InAppBrowser'] took '27.189209' ms. Plugin should use a background thread.
+2014-08-23 13:29:37.081 unimib-chat-mobile[3103:70b] setting movie path: 
+Aug 23 13:29:39 alfios-mac-mini.home unimib-chat-mobile[3103] <Error>: CGImageCreate: invalid image size: 0 x 0.
+Aug 24 16:32:22 alfios-mac-mini.home unimib-chat-mobile[3103] <Error>: CGImageCreate: invalid image size: 0 x 0.
+2014-08-24 16:34:03.042 unimib-chat-mobile[5833:70b] Multi-tasking -> Device: YES, App: YES
+2014-08-24 16:34:03.125 unimib-chat-mobile[5833:70b] Unlimited access to network resources
+2014-08-24 16:34:03.262 unimib-chat-mobile[5833:70b] [CDVTimer][keyboard] 0.062943ms
+2014-08-24 16:34:03.262 unimib-chat-mobile[5833:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-08-24 16:34:03.263 unimib-chat-mobile[5833:70b] [CDVTimer][statusbar] 0.499964ms
+2014-08-24 16:34:03.263 unimib-chat-mobile[5833:70b] [CDVTimer][TotalPluginStartup] 1.496971ms
+2014-08-24 16:34:04.646 unimib-chat-mobile[5833:70b] Resetting plugins due to page load.
+2014-08-24 16:34:05.035 unimib-chat-mobile[5833:70b] Finished load of: file:///Users/alfioemanuele/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/7ACBD27D-263B-4DE0-972B-456D072C66A8/unimib-chat-mobile.app/www/index.html#/app/playlists
+2014-08-24 16:34:05.451 unimib-chat-mobile[5833:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2014-08-24 16:34:05.451 unimib-chat-mobile[5833:70b] Setting the WebView's frame to {{0, 0}, {320, 480}}
+2014-08-24 16:34:05.455 unimib-chat-mobile[5833:70b] THREAD WARNING: ['InAppBrowser'] took '206.608154' ms. Plugin should use a background thread.
+2014-08-24 16:34:05.472 unimib-chat-mobile[5833:70b] Warning: Attempt to dismiss from view controller <MainViewController: 0xa2b2680> while a presentation or dismiss is in progress!
+2014-08-24 16:34:05.930 unimib-chat-mobile[5833:70b] webView:didFailLoadWithError - 102: Frame load interrupted
+2014-08-24 16:40:32.208 unimib-chat-mobile[6214:70b] Multi-tasking -> Device: YES, App: YES
+2014-08-24 16:40:32.226 unimib-chat-mobile[6214:70b] Unlimited access to network resources
+2014-08-24 16:40:32.267 unimib-chat-mobile[6214:70b] [CDVTimer][keyboard] 0.063002ms
+2014-08-24 16:40:32.267 unimib-chat-mobile[6214:70b] CDVPlugin class CDVStatusBar (pluginName: statusbar) does not exist.
+2014-08-24 16:40:32.268 unimib-chat-mobile[6214:70b] [CDVTimer][statusbar] 0.445008ms
+2014-08-24 16:40:32.268 unimib-chat-mobile[6214:70b] [CDVTimer][TotalPluginStartup] 1.451015ms
+2014-08-24 16:40:32.630 unimib-chat-mobile[6214:70b] Resetting plugins due to page load.
+2014-08-24 16:40:32.854 unimib-chat-mobile[6214:70b] Finished load of: file:///Users/alfioemanuele/Library/Application%20Support/iPhone%20Simulator/7.1/Applications/7ACBD27D-263B-4DE0-972B-456D072C66A8/unimib-chat-mobile.app/www/index.html#/app/playlists
+2014-08-24 16:40:38.121 unimib-chat-mobile[6214:70b] Setting the WebView's frame to {{0, 0}, {320, 436}}
+2014-08-24 16:40:38.121 unimib-chat-mobile[6214:70b] Setting the WebView's frame to {{0, 0}, {320, 480}}
+2014-08-24 16:40:38.125 unimib-chat-mobile[6214:70b] THREAD WARNING: ['InAppBrowser'] took '88.087158' ms. Plugin should use a background thread.
+2014-08-24 16:40:38.157 unimib-chat-mobile[6214:70b] Warning: Attempt to dismiss from view controller <MainViewController: 0xa4b97b0> while a presentation or dismiss is in progress!
+2014-08-24 16:40:38.577 unimib-chat-mobile[6214:70b] webView:didFailLoadWithError - 102: Frame load interrupted

@@ -1,0 +1,67 @@
+<ion-side-menus>
+
+  <ion-pane ion-side-menu-content>
+    <ion-nav-bar class="bar-stable nav-title-slide-ios7">
+      <ion-nav-back-button class="button-clear"><i class="icon ion-ios7-arrow-back"></i> Indietro</ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+  </ion-pane>
+
+  <ion-side-menu side="left">
+    <header class="bar bar-header bar-stable">
+      <h1 class="title">Men&ugrave;</h1>
+    </header>
+    <ion-content class="has-header">
+      <ion-list>
+        <ion-item class="item-icon-left" menu-close href="#/app/nickname">
+          <i class="icon ion-person"></i>
+          Nickname
+          <span class="item-note" ng-show="identificato">
+            {{ identita.nickname }}
+          </span>
+          <span class="item-note" ng-show="!identificato">
+            Accesso non effettuato
+          </span>
+        </ion-item>
+
+        <ion-toggle class="item-icon-left item-toggle"  toggle-class="toggle-assertive" ng-model="volume">
+          <i class="icon ion-volume-medium"></i>
+          Audio notifica
+        </ion-toggle>
+
+        <ion-item class="item-icon-left" menu-close  href="#/app/invia">
+          <i class="icon ion-speakerphone"></i>
+          Invia a...
+          <span class="item-note">
+            <span ng-repeat="tag in invia">
+              #{{ tag }} &nbsp;
+            </span>
+            <span ng-if="invia.length == 0">
+              Nessuno.
+            </span>
+          </span>
+        </ion-item>
+
+        <ion-item class="item-icon-left" menu-close href="#/app/segui">
+          <i class="icon ion-pound"></i>
+          Segui canali
+          <span class="badge badge-assertive">
+            {{ seguiti.length }}
+          </span>
+        </ion-item>
+
+        <ion-item class="item-icon-left" menu-close  href="#/app/info">
+          <i class="icon ion-information-circled"></i>
+          Info sull'app
+        </ion-item>
+
+        <ion-item ng-show="identificato" class="item-icon-left" menu-close ng-click="ui.logout()">
+          <i class="icon ion-log-out"></i>
+          Disconnettiti
+        </ion-item>
+
+
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>
