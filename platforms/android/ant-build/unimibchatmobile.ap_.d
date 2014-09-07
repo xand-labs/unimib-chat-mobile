@@ -144,6 +144,7 @@
 /Users/alfioemanuele/unimib-chat-mobile/platforms/android/assets/www/plugins/com.bez4pieci.cookies \
 /Users/alfioemanuele/unimib-chat-mobile/platforms/android/assets/www/plugins/com.ionic.keyboard \
 /Users/alfioemanuele/unimib-chat-mobile/platforms/android/assets/www/plugins/org.apache.cordova.device \
+/Users/alfioemanuele/unimib-chat-mobile/platforms/android/assets/www/plugins/org.apache.cordova.dialogs \
 /Users/alfioemanuele/unimib-chat-mobile/platforms/android/assets/www/plugins/org.apache.cordova.inappbrowser \
 /Users/alfioemanuele/unimib-chat-mobile/platforms/android/assets/www/plugins/org.apache.cordova.vibration \
 /Users/alfioemanuele/unimib-chat-mobile/platforms/android/assets/www/plugins/com.bez4pieci.cookies/www \
@@ -152,6 +153,10 @@
 /Users/alfioemanuele/unimib-chat-mobile/platforms/android/assets/www/plugins/com.ionic.keyboard/www/keyboard.js \
 /Users/alfioemanuele/unimib-chat-mobile/platforms/android/assets/www/plugins/org.apache.cordova.device/www \
 /Users/alfioemanuele/unimib-chat-mobile/platforms/android/assets/www/plugins/org.apache.cordova.device/www/device.js \
+/Users/alfioemanuele/unimib-chat-mobile/platforms/android/assets/www/plugins/org.apache.cordova.dialogs/www \
+/Users/alfioemanuele/unimib-chat-mobile/platforms/android/assets/www/plugins/org.apache.cordova.dialogs/www/android \
+/Users/alfioemanuele/unimib-chat-mobile/platforms/android/assets/www/plugins/org.apache.cordova.dialogs/www/notification.js \
+/Users/alfioemanuele/unimib-chat-mobile/platforms/android/assets/www/plugins/org.apache.cordova.dialogs/www/android/notification.js \
 /Users/alfioemanuele/unimib-chat-mobile/platforms/android/assets/www/plugins/org.apache.cordova.inappbrowser/www \
 /Users/alfioemanuele/unimib-chat-mobile/platforms/android/assets/www/plugins/org.apache.cordova.inappbrowser/www/inappbrowser.js \
 /Users/alfioemanuele/unimib-chat-mobile/platforms/android/assets/www/plugins/org.apache.cordova.vibration/www \

@@ -49,6 +49,13 @@ module.exports = [
         "clobbers": [
             "cookies"
         ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.dialogs/www/notification.js",
+        "id": "org.apache.cordova.dialogs.notification",
+        "merges": [
+            "navigator.notification"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -59,7 +66,8 @@ module.exports.metadata =
     "org.apache.cordova.device": "0.2.11",
     "org.apache.cordova.inappbrowser": "0.5.2-dev",
     "org.apache.cordova.vibration": "0.3.11-dev",
-    "com.bez4pieci.cookies": "0.0.1"
+    "com.bez4pieci.cookies": "0.0.1",
+    "org.apache.cordova.dialogs": "0.2.10-dev"
 }
 // BOTTOM OF METADATA
 });

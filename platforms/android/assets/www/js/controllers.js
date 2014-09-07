@@ -1,8 +1,19 @@
-var DEBUG = true;
+/**
+ * (c)2014 Alfio Emanuele Fresta
+ * <alfio.fresta@alacriter.co.uk>
+ */
+
+var DEBUG             = true;
+var MAX_CANALI_USCITA = 3;
+var ASYNC             = 75; // ms delay
+
+var REGEX_TAG   = /^[a-z0-9\-]{2,20}$/;
+var REGEX_NICK  = /^[a-zA-Z0-9\-]{6,20}$/;
+var HOST        = 'http://alacriter-dev.uk:8080';
 
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $ionicScrollDelegate) {
   // Form data for the login modal
   $scope.loginData = {};
 
@@ -18,6 +29,7 @@ angular.module('starter.controllers', [])
   $scope.seguiti      = [];
   $scope.invia        = [];
   $scope.lista        = [];
+  $scope.possoInviareA= [];
 
   $scope.online       = 0;
 
@@ -26,24 +38,52 @@ angular.module('starter.controllers', [])
     max: 255,
   };
 
+  $scope.nuovoTag     = {
+    testo:  '',
+    max: 22
+  };
+
   $scope.messaggi     = [];
 
   $scope.client = new CClient();
+  $scope.client.endpoint = HOST;
 
   $scope.inviaMessaggio = function() {
     if ( !$scope.messaggio.testo || !$scope.identificato ) { return false; }
+    if ( $scope.invia.length == 0 ) {
+      navigator.notification.alert(
+        "Devi scegliere almeno un destinatario.\nVai in Menu > Invia a, per scegliere a quali tag inviare il messaggio.", 
+        function() { 
+        },
+        "Nessun destinatario"
+      );
+      return;
+    }
+    var rid = $scope.storico.aggiungi_msg(false, null, (new Date), $scope.invia, $scope.identita.nickname, $scope.messaggio.testo);
+    //    CClient.prototype.send = function(tags, body, reply, callback_ok, callback_error) {
+    $scope.client.send($scope.invia, $scope.messaggio.testo, null,
+      function(visibile) {
+        if ( visibile == HIDE ) {
+          $this.scope.ui.elimina(rid);
+        }
+      },
+      function(ragione) {
+        navigator.notification.alert(
+          "Impossibile inviare: " + ragione, 
+          function() { 
+            $this.scope.ui.elimina(rid);
+          },
+          "Errore d'invio",
+          "OK"
+        );
+      }
+    )
     $scope.messaggio.testo = '';
-    $scope.$apply();
 
   };
 
   $scope.eventi = {
 
-    connect:    function() {
-      $scope.accessoInCorso = false;
-
-      $scope.$apply();
-    },
 
     disconnect: function() {
       DEBUG && console.log('@ Disconnect', new Date());
@@ -62,6 +102,7 @@ angular.module('starter.controllers', [])
     receive:    function (important, author, reply, tags, body, date) {
       DEBUG && console.log('<', important, author, reply, tags, body, date);
       $scope.storico.aggiungi_msg(important, reply, date, tags, author, body);
+      $scope.ui.notifica();
       $scope.$apply();
 
     },
@@ -124,10 +165,12 @@ angular.module('starter.controllers', [])
       DEBUG && console.log('t', tags);
       $scope.seguiti = tags;
       $.jStorage.set("tags", tags);
+      $scope.listaInvia();
       $scope.$apply();
     },
 
     connect:    function () {
+      $scope.accessoInCorso = false;
       $.jStorage.set("login", (new Date));
       var tags = $.jStorage.get("tags", []);
       for (var i in tags) {
@@ -137,9 +180,7 @@ angular.module('starter.controllers', [])
       if ( nick ) {
         $scope.client.requestNickname(nick);
       }
-      var tags_selected = $.jStorage.get("tags-selected");
-      for ( i in tags_selected ) {
-      }
+      $scope.invia = $.jStorage.get("invia", []);
       $scope.$apply();
 
     },
@@ -182,7 +223,6 @@ angular.module('starter.controllers', [])
         autore: autore,
         tags: tags
       });
-      $scope.$apply();
       return rid;
     },
 
@@ -221,19 +261,22 @@ angular.module('starter.controllers', [])
 
     aggiungi_msg:     function (importante, risposta, data, tags, autore, messaggio, muto) {
       messaggio = $("<div />").text(messaggio).html();
-      $scope.ui.notifica();
       if ( risposta ) {
         messaggio = "@" + risposta + ": " + messaggio;
       }
-      $scope.$apply();
-      return $scope.storico.aggiungi(data, "msg", messaggio, autore, tags);
+      var rid = $scope.storico.aggiungi(data, "msg", messaggio, autore, tags);
+      $scope.storico.scorri_fondo();
+      return rid;
+    },
+
+    ottieni_delegato_scroll: function() {
+      return $ionicScrollDelegate;
     },
 
     scorri_fondo:     function () {
-      /*if (!$('#io-scrollo')) { return false; }
-      $('#io-scrollo').stop().animate({
-        scrollTop: $("#io-scrollo")[0].scrollHeight
-      }, 500);*/
+      setTimeout(function() {
+        $ionicScrollDelegate.$getByHandle('scrollabile').scrollBottom(true);
+      }, 150);
     },
 
     elimina:      function (rid) {
@@ -308,11 +351,17 @@ angular.module('starter.controllers', [])
     },
 
     notifica: function() {
-      if ( $scope.volume &&navigator.notification.beep && navigator.notification.vibrate ) {
-        navigator.notification.beep(2);
-        navigator.notification.vibrate(200);
+      if ( navigator.notification.beep && navigator.notification.vibrate ) {
+        // ASYNC!
+        if ( $scope.volume ) {
+          setTimeout(function() {
+            navigator.notification.beep(1);
+          }, ASYNC);
+        }
+        setTimeout(function() {
+          navigator.notification.vibrate(200);
+        }, ASYNC);
       }
-      $scope.$apply();
     },
 
     seguo: function(tag) {
@@ -330,40 +379,139 @@ angular.module('starter.controllers', [])
       $scope.$apply();
     },
 
-/*
-function ui_trending_join(obj, tag) {
-  ui_join(tag, obj);
-}
+    chiediNuovoNick: function(preInserito) {
+      if ( preInserito === undefined ) {
+        preInserito = "";
+      }
+      return prompt("Inserisci nuovo nick", preInserito);
+    },
 
-function subscribedTo(tag) {
-  return (client.getTags().indexOf(tag) !== -1);
-}
+    cambiaNick: function(ultimoTentativo) {
+      // ASYNC
+      setTimeout(function() {
+        if ( ultimoTentativo == undefined ) {
+          var nuovoNick = $scope.ui.chiediNuovoNick($scope.identita.nickname == $scope.identita.realname ? "" : $scope.identita.nickname );
+        } else {
+          var nuovoNick = $scope.ui.chiediNuovoNick(ultimoTentativo);
+        }
+        if ( nuovoNick == null || nuovoNick == false ) {
+          return false;
+        }
+        if ( !REGEX_NICK.test(nuovoNick) ) {
+          navigator.notification.alert(
+            "Spiacente, il nick che hai richiesto (" + nuovoNick + ") non e' nel formato corretto.\nPuoi usare lettere, numeri e -. Il nick deve contenere tra 6 a 20 caratteri.", 
+            function() { 
+              $scope.ui.cambiaNick(nuovoNick);
+            },
+            "Formato non corretto",
+            "Riprova"
+          );
+          return false;
+        }
+        $scope.client.testNickname(nuovoNick, function(disponibile) {
+          if ( disponibile ) {
+            $scope.client.requestNickname(nuovoNick);
+            $.jStorage.set("nick", nuovoNick);
+          } else {
+            navigator.notification.alert(
+              "Spiacente, il nick che hai richiesto (" + nuovoNick + ") non risulta disponibile.", 
+              function() { 
+              },
+              "Nick non disponibile",
+              "OK"
+            );
+          }
 
-function ui_reply(rid) {
-  // Rimuovi tutti i tag e segui quelli del messaggio
-  $("#modulo-msg-tags").tagit("removeAll");
-  $("[data-rid=" + rid + "] [data-tag]").each( function(i, e) {
-    $("#modulo-msg-tags").tagit("createTag", "#" + $(e).data('tag'));
-  });
-  ui_autore($("[data-rid=" + rid + "] .autore").text());
-}
+        });
 
-function ui_autore(autore) {
-  autore = autore.trim();
-  if ( $("#modulo-msg-txt").val().substring(0,1) !== "@" ) {
-    $("#modulo-msg-txt").val("@" + autore + ": " + $("#modulo-msg-txt").val() );
+      }, ASYNC);
+
+    },
+
+    identitaReale: function() {
+      $scope.client.requestNickname(null);
+      $.jStorage.set("nick", false);
+
+
+    },
+
+    nuovoTag: function() {
+      if ( !REGEX_TAG.test($scope.nuovoTag.testo) ) {
+        navigator.notification.alert(
+          "Spiacente, il tag che vuoi seguire (" + $scope.nuovoTag.testo + ") non ha un formato corretto.\nSono accettati nomi di tag tra 2 e 20 caratteri contenenti lettere, numeri e -.", 
+          function() { 
+          },
+          "Formato non valido",
+          "OK"
+        );
+        return;
+      }
+      $scope.ui.jointag($scope.nuovoTag.testo, function() {}, function() {
+        navigator.notification.alert(
+          "Spiacente, si e' verificato un errore nel seguire il canale.", 
+          function() { 
+          },
+          "Errore",
+          "OK"
+        );
+      });
+      $scope.nuovoTag.testo = '';
+    },
+
+    renderNick: function(nick) {
+      nick = nick.split("@");
+      if ( nick.length == 1 ) {
+        nick.push("anonymous");
+      }
+      return nick[0] + " <img src='" + HOST + "/id/" + nick[1] + ".svg' class='img-id' alt='" + nick[1] + "' />";
+    },
+
   }
-  $("#modulo-msg-txt").focus();
-}
 
-function ui_join(tag, _obj, silenzioso) {
-  if ( silenzioso == undefined ) {
-    client.subscribe(tag, function() { }, ui_join_errore);
-  } else {
-    client.subscribe(tag, function() { }, function() { })
+  /** 
+   * [{tag: "nome", selezionato: true|false}, ...]
+   * viene usata come funzione sorgente dati per la vista
+   * dei canali da selezionare per l'invio
+   */
+  $scope.listaInvia = function() {
+    var r = [];
+    for ( i in $scope.invia ) {
+      r.push({nome: $scope.invia[i], selezionato: true});
+    }
+    for ( i in $scope.seguiti ) {
+      if ( $scope.invia.indexOf($scope.seguiti[i]) !== -1 ) {
+        continue;
+      }
+      r.push({nome: $scope.seguiti[i], selezionato: false});
+    }
+    $scope.possoInviareA = r;
   }
-}
-*/
+
+  $scope.listaInviaSeleziona = function(tag, nuovoStato) {
+    // Se sto aggiungendo e ho superato la lunghezza massima...
+    if ( nuovoStato && $scope.invia.length >= MAX_CANALI_USCITA ) {
+      navigator.notification.alert(
+        "Spiacente, puoi inviare messaggi a massimo " + MAX_CANALI_USCITA + " tag contemporaneamente.", 
+        function() { 
+          $scope.listaInvia();
+          $scope.$apply();
+        },
+        "Impossibile aggiungere tag",
+        "Annulla"
+      );
+      return;
+    }
+    if ( nuovoStato ) {
+      // Aggiungo a lista tag in uscita
+      $scope.invia.push(tag);
+    } else {
+      // Rimuovo dalla lista tag in uscita
+      $scope.invia.splice($scope.invia.indexOf(tag), 1);
+    }
+    $scope.listaInvia();
+    $.jStorage.set("invia", $scope.invia);
+    // Non chiamo $apply() perche' dentro evento ng-click
+    return;
   }
 
   $scope.effettuaLogin = function() {

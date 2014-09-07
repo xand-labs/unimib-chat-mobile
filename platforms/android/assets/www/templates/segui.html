@@ -37,4 +37,17 @@
     </div>
 
   </ion-content>
+
+  <ion-footer-bar align-title="left" class="item-input-inset" ng-if="identificato">
+    <form class="item-input-wrapper" ng-submit="ui.nuovoTag();">
+
+      <i class="icon ion-pound placeholder-icon"></i>
+
+      <input type="text" ng-model="nuovoTag.testo" 
+        name="nuovotag" placeholder="Nome del tag da seguire..." 
+        id="nuovotag" />
+
+    </form>
+  </ion-footer-bar>
+
 </ion-view>

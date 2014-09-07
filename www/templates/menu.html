@@ -16,15 +16,15 @@
         <ion-item class="item-icon-left" menu-close href="#/app/nickname">
           <i class="icon ion-person"></i>
           Nickname
-          <span class="item-note" ng-show="identificato">
-            {{ identita.nickname }}
+          <span class="item-note" ng-show="identificato" 
+           ng-bind-html="ui.renderNick(identita.nickname)">
           </span>
           <span class="item-note" ng-show="!identificato">
             Accesso non effettuato
           </span>
         </ion-item>
 
-        <ion-toggle class="item-icon-left item-toggle"  toggle-class="toggle-assertive" ng-model="volume">
+        <ion-toggle class="item-icon-left item-toggle" toggle-class="toggle-assertive" ng-model="volume">
           <i class="icon ion-volume-medium"></i>
           Audio notifica
         </ion-toggle>
@@ -34,17 +34,17 @@
           Invia a...
           <span class="item-note">
             <span ng-repeat="tag in invia">
-              #{{ tag }} &nbsp;
+              #{{ tag }} 
             </span>
             <span ng-if="invia.length == 0">
-              Nessuno.
+             <i class="ion-alert-circled"></i> Nessuno
             </span>
           </span>
         </ion-item>
 
         <ion-item class="item-icon-left" menu-close href="#/app/segui">
           <i class="icon ion-pound"></i>
-          Segui canali
+          Segui tag
           <span class="badge badge-assertive">
             {{ seguiti.length }}
           </span>

@@ -5,6 +5,7 @@
 
 .autore {
 	font-weight: bold;
+	font-size: smaller;
 }
 
 .sys .messaggio {
@@ -34,6 +35,36 @@
 	padding-bottom: 0px;
 }
 
+.tags {
+	font-size: smaller;
+	color: gray;
+}
+
 .azzerapadding {
 	padding: 0px !important;
+}
+
+.niente-padding-sotto {
+	padding-bottom: 0px !important;
+}
+
+.niente-padding-sopra {
+	padding-top: 0px !important;
+}
+
+.figli-niente-padding-sotto * {
+	padding-bottom: 0px !important;
+}
+
+.figli-niente-padding-sopra * {
+	padding-top: 0px !important;
+}
+
+.messaggio-utente {
+	border-left: 4px solid green;
+}
+
+.img-id {
+	width: 1em;
+	height: 1em;
 }

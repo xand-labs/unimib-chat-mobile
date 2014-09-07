@@ -13,17 +13,23 @@
       <div class="item item-text-wrap">
         <p>Devi effettuare l'accesso per poter visualizzare i Tag disponibili. Torna indietro e tocca il pulsante rosso.</p> 
       </div>
-
     </div>
 
-    <div ng-if="identificato && seguiti.length == 0">
-      Nessun tag disponibile.
+    <div class="card" ng-if="identificato && seguiti.length == 0">
+      <div class="item item-divider">
+        Nessun tag seguito
+      </div>
+      <div class="item item-text-wrap">
+        <p>Inizia a seguire qualche Tag per poter scegliere a quali Tag inviare un messaggio.</p>
+        <p>Vai su <strong>Menu > Segui canali</strong> per trovare Tag da seguire o crearne uno nuovo.</p> 
+      </div>
     </div>
  
     <div ng-show="identificato">
 
-      <ion-checkbox ng-repeat="tag in seguiti">
-        #{{ tag }}
+      <ion-checkbox ng-repeat="tag in possoInviareA" ng-model="tag.selezionato"
+       ng-click="listaInviaSeleziona(tag.nome, tag.selezionato)">
+        #{{ tag.nome }}
       </ion-checkbox>
 
     </div>

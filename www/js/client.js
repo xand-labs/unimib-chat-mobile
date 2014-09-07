@@ -52,12 +52,10 @@ CClient.prototype.noop2 = function( first, second ) {}
 // Try and connect to the server
 CClient.prototype.connect = function( params, callback_ok, callback_error ) {
 	
-	console.log("[CLIENT] Connect fired...");
 	this.io = io.connect(this.endpoint, {query: $.param(params)});
 
 	var t = this;
 	this.io.on('connect', function (r) {
-		console.log("[CLIENT] (!) ONCONNECT");
 		t.getIdentity(function(i) {
 			t.identity = i;
 			callback_ok();

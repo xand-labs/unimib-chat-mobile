@@ -31,6 +31,10 @@
                         {
                             "xml": "<feature name=\"Cookies\"><param name=\"ios-package\" value=\"CDVCookies\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Notification\"><param name=\"ios-package\" value=\"CDVNotification\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -46,7 +50,7 @@
                     "AudioToolbox.framework": [
                         {
                             "xml": "true",
-                            "count": 1
+                            "count": 2
                         }
                     ]
                 }
@@ -70,6 +74,9 @@
             "PACKAGE_NAME": "com.ionicframework.unimibchatmobile703906"
         },
         "com.bez4pieci.cookies": {
+            "PACKAGE_NAME": "com.ionicframework.unimibchatmobile703906"
+        },
+        "org.apache.cordova.dialogs": {
             "PACKAGE_NAME": "com.ionicframework.unimibchatmobile703906"
         }
     },

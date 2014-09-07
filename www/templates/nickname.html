@@ -9,16 +9,22 @@
     <div class="card" ng-show="identificato">
       <div class="item item-text-wrap">
         <p>Sei conosciuto come:<br />
-            <strong>{{identita.nickname}}</strong>
+            <strong ng-bind-html="ui.renderNick(identita.nickname)"></strong>
         </p>
       </div>
       <div class="item item-text-wrap">
         <p>Identit&agrave; reale:<br />
-            <strong>{{identita.realname}}</strong>
+            <strong ng-bind-html="ui.renderNick(identita.realname)"></strong>
         </p>
       </div>
       <div class="item item-text-wrap">
-        <p>Coming soon...</p>
+        <button class="button button-block button-positive" ng-click="ui.cambiaNick()">
+          <i class="ion-edit"></i> Cambia il tuo nickname
+        </button>
+        <button ng-if="identita.nickname != identita.realname" class="button button-block button-assertive" ng-click="ui.identitaReale()">
+          Torna ad usare l'identit&agrave; reale
+        </button>
+
       </div>
 
     </div>

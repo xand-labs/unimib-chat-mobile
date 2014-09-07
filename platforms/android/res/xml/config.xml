@@ -21,6 +21,9 @@
     <feature name="Cookies">
         <param name="android-package" value="com.bez4pieci.cookies.Cookies" />
     </feature>
+    <feature name="Notification">
+        <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+    </feature>
     <name>unimib-chat-mobile</name>
     <description>
         Client mobile per chat Unimib
