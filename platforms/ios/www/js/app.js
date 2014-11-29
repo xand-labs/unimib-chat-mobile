@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+var APP = angular.module('starter', ['ionic', 'starter.controllers'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -29,7 +29,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       templateUrl: "templates/menu.html",
       controller: 'AppCtrl'
     })
-
     .state('app.storico', {
       url: "/storico",
       views: {
@@ -38,35 +37,40 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
-
-    .state('app.browse', {
-      url: "/browse",
+    .state('app.segui', {
+      url: "/segui",
       views: {
         'menuContent' :{
-          templateUrl: "templates/browse.html"
+          templateUrl: "templates/segui.html"
         }
       }
     })
-    .state('app.playlists', {
-      url: "/playlists",
+    .state('app.invia', {
+      url: "/invia",
       views: {
         'menuContent' :{
-          templateUrl: "templates/playlists.html",
-          controller: 'PlaylistsCtrl'
+          templateUrl: "templates/invia.html"
         }
       }
     })
-
-    .state('app.single', {
-      url: "/playlists/:playlistId",
+    .state('app.nickname', {
+      url: "/nickname",
       views: {
         'menuContent' :{
-          templateUrl: "templates/playlist.html",
-          controller: 'PlaylistCtrl'
+          templateUrl: "templates/nickname.html",
+          controller: 'NicknameCtrl'
+        }
+      }
+    })
+    .state('app.info', {
+      url: "/info",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/info.html"
         }
       }
     });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/storico');
 });
 

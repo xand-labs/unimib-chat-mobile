@@ -1,1 +1,70 @@
-/* Empty. Add your own CSS if you like */
+.data {
+	color: gray;
+	font-size: x-small;
+}
+
+.autore {
+	font-weight: bold;
+	font-size: smaller;
+}
+
+.sys .messaggio {
+	color: #C00;
+}
+
+.join .messaggio, .leave .messaggio {
+	color: blue;
+}
+
+.tag-jl {
+	font-size: x-small;
+	color: white;
+	background-color: #4e8ef7;
+	padding: .08em .2em !important;
+	box-shadow: 1px 1px 0px black;
+	margin-right: .2em;
+}
+
+.tag-msg {
+	font-size: x-small;
+	color: green;
+	margin-right: .2em;
+}
+
+.riga {
+	padding-bottom: 0px;
+}
+
+.tags {
+	font-size: smaller;
+	color: gray;
+}
+
+.azzerapadding {
+	padding: 0px !important;
+}
+
+.niente-padding-sotto {
+	padding-bottom: 0px !important;
+}
+
+.niente-padding-sopra {
+	padding-top: 0px !important;
+}
+
+.figli-niente-padding-sotto * {
+	padding-bottom: 0px !important;
+}
+
+.figli-niente-padding-sopra * {
+	padding-top: 0px !important;
+}
+
+.messaggio-utente {
+	border-left: 4px solid green;
+}
+
+.img-id {
+	width: 1em;
+	height: 1em;
+}

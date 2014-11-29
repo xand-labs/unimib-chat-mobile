@@ -13,43 +13,51 @@
     </header>
     <ion-content class="has-header">
       <ion-list>
-        <ion-item class="item-icon-left" nav-clear menu-close href="#/app/search">
+        <ion-item class="item-icon-left" menu-close href="#/app/nickname">
           <i class="icon ion-person"></i>
           Nickname
-          <span class="item-note">
-            alfio.emanuele.f@gmail.com
+          <span class="item-note" ng-show="identificato" 
+           ng-bind-html="ui.renderNick(identita.nickname)">
+          </span>
+          <span class="item-note" ng-show="!identificato">
+            Accesso non effettuato
           </span>
         </ion-item>
-        <ion-item class="item-icon-left item-toggle" nav-clear href="#">
+
+        <ion-toggle class="item-icon-left item-toggle" toggle-class="toggle-assertive" ng-model="volume">
           <i class="icon ion-volume-medium"></i>
           Audio notifica
-          <label class="toggle toggle-assertive">
-            <input type="checkbox">
-            <div class="track">
-              <div class="handle"></div>
-            </div>
-          </label>
-        </ion-item>
+        </ion-toggle>
 
-        <ion-item class="item-icon-left" href="#">
+        <!-- <ion-item class="item-icon-left" menu-close  href="#/app/invia">
           <i class="icon ion-speakerphone"></i>
           Invia a...
           <span class="item-note">
-            #unimib-generale<br />
-            #unimib-dev<br />
-            #prova1
+            <span ng-repeat="tag in invia">
+              #{{ tag }} 
+            </span>
+            <span ng-if="invia.length == 0">
+             <i class="ion-alert-circled"></i> Nessuno
+            </span>
+          </span>
+        </ion-item> -->
+
+        <ion-item class="item-icon-left" menu-close href="#/app/segui">
+          <i class="icon ion-pound"></i>
+          Segui tag
+          <span class="badge badge-assertive">
+            {{ seguiti.length }}
           </span>
         </ion-item>
 
-        <ion-item class="item-icon-left" href="#">
-          <i class="icon ion-pound"></i>
-          Segui canali
-          <span class="badge badge-assertive">12</span>
-        </ion-item>
-
-        <ion-item class="item-icon-left" href="#">
+        <ion-item class="item-icon-left" menu-close  href="#/app/info">
           <i class="icon ion-information-circled"></i>
           Info sull'app
+        </ion-item>
+
+        <ion-item ng-show="identificato" class="item-icon-left" menu-close ng-click="ui.logout()">
+          <i class="icon ion-log-out"></i>
+          Disconnettiti
         </ion-item>
 
 

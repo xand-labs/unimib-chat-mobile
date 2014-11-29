@@ -13,7 +13,7 @@ var HOST        = 'http://alacriter-dev.uk:8080';
 
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, $ionicScrollDelegate) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $ionicScrollDelegate, $ionicPopup, $ionicPopover) {
   // Form data for the login modal
   $scope.loginData = {};
 
@@ -50,15 +50,17 @@ angular.module('starter.controllers', [])
 
   $scope.inviaMessaggio = function() {
     if ( !$scope.messaggio.testo || !$scope.identificato ) { return false; }
+
+    // Se nessun tag selezionato, apri selettore 
     if ( $scope.invia.length == 0 ) {
-      navigator.notification.alert(
-        "Devi scegliere almeno un destinatario.\nVai in Menu > Invia a, per scegliere a quali tag inviare il messaggio.", 
-        function() { 
-        },
-        "Nessun destinatario"
-      );
+      $scope.generaPopupDestinatari(true).then(function(ok){
+        if ( ok ) { // Se non ho annullato, riprovo
+          $scope.inviaMessaggio();
+        }
+      });
       return;
     }
+
     var rid = $scope.storico.aggiungi_msg(false, null, (new Date), $scope.invia, $scope.identita.nickname, $scope.messaggio.testo);
     //    CClient.prototype.send = function(tags, body, reply, callback_ok, callback_error) {
     $scope.client.send($scope.invia, $scope.messaggio.testo, null,
@@ -80,6 +82,55 @@ angular.module('starter.controllers', [])
     )
     $scope.messaggio.testo = '';
 
+  };
+
+  $scope.popup = function(titolo, messaggio) {
+    $ionicPopup.show({
+      title: titolo,
+      subTitle: messaggio,
+      buttons: [
+        {
+          text: 'Ok',
+          type: 'button-positive'
+        }
+      ]
+    })
+  };
+
+  $scope.apriPopupDestinatari = function() {
+      $scope.generaPopupDestinatari(false);
+  };
+
+  $scope.generaPopupDestinatari = function(forzato) {
+    bottoni = [{
+      text: '<strong>Okay</strong>',
+      type: 'button-positive'
+    }];
+
+    if ( forzato ) {
+      bottoni[0].onTap = function(e) {
+        if ($scope.invia.length == 0) {
+          e.preventDefault();
+          $scope.popup(
+            "Errore",
+            "Devi selezionare almeno un tag per inviare un messaggio"
+          );
+        } else {
+          return true;
+        }
+      }
+      bottoni = [{
+        text: 'Annulla',
+        onTap: function(e){return false;}
+      }].concat(bottoni);
+    }
+    return $ionicPopup.show({
+      template: '<ion-checkbox ng-repeat="tag in possoInviareA" ng-model="tag.selezionato" ng-click="listaInviaSeleziona(tag.nome, tag.selezionato)">#{{ tag.nome }}</ion-checkbox>',
+      title: 'Destinatari',
+      subTitle: 'A quali tag vuoi inviare i messaggi?',
+      scope: $scope,
+      buttons: bottoni
+    });
   };
 
   $scope.eventi = {

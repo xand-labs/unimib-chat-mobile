@@ -7,25 +7,14 @@ const DEBUG 			= true;
 
 var livelli = ['info', 'success', 'warning', 'danger'];
 
-var tags_impostazioni = {
-	tagLimit: 3,
-	beforeTagAdded: 	ui_tag_add_before,
-	afterTagAdded:  	ui_tag_add_after,
-	beforeTagRemoved: 	ui_tag_remove_before,
-	afterTagRemoved: 	ui_tag_remove_after,
-	onTagLimitExceeded: ui_tag_limit_hit,
-	autocomplete: 	{
-		source: 		ui_tag_source
-	},
-	caseSensitive: false,
-	placeholderText: "Aggiungi tag..."
-};
+window.onerror = function(message, url, lineNumber) {
+    console.log("Error: "+message+" in "+url+" at line "+lineNumber);
+}
+
 
 var tagList = [];
 
 
-// Inizializza il client
-var client = new CClient();
 
 function effettua_login() {
 
@@ -33,17 +22,68 @@ function effettua_login() {
 		var loginWindow;
 		loginWindow = window.open(url, '_blank', 'location=no,toolbar=no');
 		loginWindow.addEventListener('loadstart', function(evt) {
-		    var url = evt.url;
-		    var code = /\?code=(.+)$/.exec(url);
-		    var error = /\?error=(.+)$/.exec(url);
+		    var lurl = evt.url;
+		    var code = /\?code=(.+)$/.exec(lurl);
+		    var error = /\?error=(.+)$/.exec(lurl);
+		    var token = false;
+
+		    console.log("Caricato url: " + lurl);
 
 		    if (code || error) {
 		         /* code[1] is your code to use in your next request to Google, we'll set it equal to code */
-		       code =code[1];
-		    }
-		    $("#sid").val(code);
+       			code = code[1];
+	       		console.log("Rilevato codice autenticazione: " + code);
 
-		    loginWindow.close();
+				  $.post('https://accounts.google.com/o/oauth2/token', {
+				    code: code,
+				    client_id: "111899957451-6mr9mgh4vvi3mbmmk1q9teo48vsr2nre.apps.googleusercontent.com",
+				    client_secret: "vIvQjkoIXPWUxIetNu9nEJyz",
+				    redirect_uri: "http://localhost:8080",
+				    grant_type: 'authorization_code'
+				  }, function(data) {
+
+				  	console.log(data);
+
+					client.connect({
+						access_token: data.access_token
+
+					}, function() {
+
+						console.log("Connesso correttamente!");
+						// Assegna eventi
+						client.events = {
+							disconnect: 	client_disconnect,
+							notification: 	client_notification,
+							receive: 		client_receive,
+							reconnect: 		client_reconnect,
+							subscribe: 		client_subscribe,
+							unsubscribe: 	client_unsubscribe,
+							updateCount: 	client_updateCount,
+							updateIdentity: client_updateIdentity, 
+							updateList: 	client_updateList,
+							updateTags: 	client_updateTags,
+						};
+
+						storico_aggiungi_sys("Benvenuto/a nella chat!"); 
+						client_connect();
+
+					}, function() {
+						console.log("Accesso negato.");
+
+					});
+
+
+				  });
+
+
+	  	    	loginWindow.close();
+
+
+
+
+		    }
+
+
 		});
 
 		// Token ottenuta
@@ -51,39 +91,6 @@ function effettua_login() {
 		$("#accesso-pulsante").hide();
 		$("#login-incorso").show();
 
-		client.connect({
-			access_token: a.access_token
-
-		}, function() {
-			// Login effettuato
-			personalizzaNavbar();
-			mostraComponente("chat", 500);
-
-			// Assegna eventi
-			client.events = {
-				disconnect: 	client_disconnect,
-				notification: 	client_notification,
-				receive: 		client_receive,
-				reconnect: 		client_reconnect,
-				subscribe: 		client_subscribe,
-				unsubscribe: 	client_unsubscribe,
-				updateCount: 	client_updateCount,
-				updateIdentity: client_updateIdentity, 
-				updateList: 	client_updateList,
-				updateTags: 	client_updateTags,
-			};
-
-			storico_aggiungi_sys("Benvenuto/a nella chat!"); 
-			$("#modulo-msg-txt").focus();
-			client_connect();
-
-		}, function() {
-			// Accesso negato
-			$("#login-incorso").hide();
-			$("#accesso-pulsante").show();
-			$("#login-errore").show();
-
-		});
 
 	}*/
 }
@@ -453,11 +460,6 @@ document.addEventListener("deviceready", function(){
 
     $("#usa-identita-originale").click ( ui_cambia_nick_originale );
     $("#notifica-audio-pulsante").click(ui_notifica_audio_click);
-
-    setTimeout(function(){
-    effettua_login();
-	
-}, 5000);
     
 });
 

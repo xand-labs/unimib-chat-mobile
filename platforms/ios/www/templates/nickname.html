@@ -1,0 +1,42 @@
+<ion-view title="Identit&agrave;">
+
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+
+  <ion-content class="has-header">
+
+    <div class="card" ng-show="identificato">
+      <div class="item item-text-wrap">
+        <p>Sei conosciuto come:<br />
+            <strong ng-bind-html="ui.renderNick(identita.nickname)"></strong>
+        </p>
+      </div>
+      <div class="item item-text-wrap">
+        <p>Identit&agrave; reale:<br />
+            <strong ng-bind-html="ui.renderNick(identita.realname)"></strong>
+        </p>
+      </div>
+      <div class="item item-text-wrap">
+        <button class="button button-block button-positive" ng-click="ui.cambiaNick()">
+          <i class="ion-edit"></i> Cambia il tuo nickname
+        </button>
+        <button ng-if="identita.nickname != identita.realname" class="button button-block button-assertive" ng-click="ui.identitaReale()">
+          Torna ad usare l'identit&agrave; reale
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="card" ng-show="!identificato">
+      <div class="item item-text-wrap">
+        <h3>Accesso non effettuato</h3>
+      </div>
+      <div class="item item-text-wrap">
+        <p>Devi effettuare l'accesso per poter modificare la tua identit&agrave;. Torna indietro e tocca il pulsante rosso.</p> 
+      </div>
+
+    </div>
+  </ion-content>
+</ion-view>
