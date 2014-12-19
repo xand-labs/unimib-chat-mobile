@@ -1,0 +1,162 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'q' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.33
+4 warn package.json unimib-chat-mobile@1.0.0 No repository field.
+5 verbose readDependencies using package.json deps
+6 verbose cache add [ 'q', null ]
+7 verbose cache add name=undefined spec="q" args=["q",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: 'q',
+8 verbose parsed url   path: 'q',
+8 verbose parsed url   href: 'q' }
+9 silly lockFile 22ea1c64-q q
+10 verbose lock q /Users/alfioemanuele/.npm/22ea1c64-q.lock
+11 silly lockFile 22ea1c64-q q
+12 silly lockFile 22ea1c64-q q
+13 verbose addNamed [ 'q', '' ]
+14 verbose addNamed [ null, '*' ]
+15 silly lockFile f83edb5d-q q@
+16 verbose lock q@ /Users/alfioemanuele/.npm/f83edb5d-q.lock
+17 silly addNameRange { name: 'q', range: '*', hasData: false }
+18 verbose request where is /q
+19 verbose request registry https://registry.npmjs.org/
+20 verbose request id d724042dfa71bf1e
+21 verbose url raw /q
+22 verbose url resolving [ 'https://registry.npmjs.org/', './q' ]
+23 verbose url resolved https://registry.npmjs.org/q
+24 verbose request where is https://registry.npmjs.org/q
+25 info trying registry request attempt 1 at 10:54:41
+26 verbose etag "AYJS4YIRJ6H3F3O9BVDSDSMY6"
+27 http GET https://registry.npmjs.org/q
+28 http 200 https://registry.npmjs.org/q
+29 silly registry.get cb [ 200,
+29 silly registry.get   { date: 'Fri, 19 Dec 2014 09:54:42 GMT',
+29 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+29 silly registry.get     etag: '"YEZ88YJKTLQGUAN1YNU734DJ"',
+29 silly registry.get     'content-type': 'application/json',
+29 silly registry.get     'cache-control': 'max-age=60',
+29 silly registry.get     'content-length': '131084',
+29 silly registry.get     'accept-ranges': 'bytes',
+29 silly registry.get     via: '1.1 varnish',
+29 silly registry.get     age: '0',
+29 silly registry.get     'x-served-by': 'cache-lhr6329-LHR',
+29 silly registry.get     'x-cache': 'HIT',
+29 silly registry.get     'x-cache-hits': '1',
+29 silly registry.get     'x-timer': 'S1418982882.133750,VS0,VE153',
+29 silly registry.get     vary: 'Accept',
+29 silly registry.get     'keep-alive': 'timeout=10, max=50',
+29 silly registry.get     connection: 'Keep-Alive' } ]
+30 silly addNameRange number 2 { name: 'q', range: '*', hasData: true }
+31 silly addNameRange versions [ 'q',
+31 silly addNameRange   [ '0.0.0',
+31 silly addNameRange     '0.0.1',
+31 silly addNameRange     '0.0.2',
+31 silly addNameRange     '0.0.3',
+31 silly addNameRange     '0.1.0',
+31 silly addNameRange     '0.1.1',
+31 silly addNameRange     '0.1.2',
+31 silly addNameRange     '0.1.3',
+31 silly addNameRange     '0.1.4',
+31 silly addNameRange     '0.1.5',
+31 silly addNameRange     '0.1.6',
+31 silly addNameRange     '0.1.7',
+31 silly addNameRange     '0.1.8',
+31 silly addNameRange     '0.1.9',
+31 silly addNameRange     '0.2.0-rc1',
+31 silly addNameRange     '0.2.0',
+31 silly addNameRange     '0.2.1',
+31 silly addNameRange     '0.2.2',
+31 silly addNameRange     '0.2.3',
+31 silly addNameRange     '0.2.4',
+31 silly addNameRange     '0.2.5',
+31 silly addNameRange     '0.2.6',
+31 silly addNameRange     '0.2.7',
+31 silly addNameRange     '0.2.8',
+31 silly addNameRange     '0.2.9',
+31 silly addNameRange     '0.3.0',
+31 silly addNameRange     '0.2.10',
+31 silly addNameRange     '0.4.0',
+31 silly addNameRange     '0.4.1',
+31 silly addNameRange     '0.4.2',
+31 silly addNameRange     '0.4.4',
+31 silly addNameRange     '0.5.0',
+31 silly addNameRange     '0.5.1',
+31 silly addNameRange     '0.5.2',
+31 silly addNameRange     '0.5.3',
+31 silly addNameRange     '0.6.0',
+31 silly addNameRange     '0.7.0',
+31 silly addNameRange     '0.7.1',
+31 silly addNameRange     '0.7.2',
+31 silly addNameRange     '0.8.0',
+31 silly addNameRange     '0.8.1',
+31 silly addNameRange     '0.8.2',
+31 silly addNameRange     '0.8.3',
+31 silly addNameRange     '0.8.4',
+31 silly addNameRange     '0.8.5',
+31 silly addNameRange     '0.8.6',
+31 silly addNameRange     '0.8.7',
+31 silly addNameRange     '0.8.8',
+31 silly addNameRange     '0.8.9',
+31 silly addNameRange     '0.8.10',
+31 silly addNameRange     '0.8.11',
+31 silly addNameRange     '0.8.12',
+31 silly addNameRange     '0.9.0',
+31 silly addNameRange     '0.9.1',
+31 silly addNameRange     '0.9.2',
+31 silly addNameRange     '0.9.3',
+31 silly addNameRange     '0.9.4',
+31 silly addNameRange     '0.9.5',
+31 silly addNameRange     '0.9.6',
+31 silly addNameRange     '0.9.7',
+31 silly addNameRange     '1.0.0',
+31 silly addNameRange     '1.0.1',
+31 silly addNameRange     '2.0.0',
+31 silly addNameRange     '2.0.1',
+31 silly addNameRange     '2.0.2',
+31 silly addNameRange     '1.1.0',
+31 silly addNameRange     '1.1.1',
+31 silly addNameRange     '1.1.2' ] ]
+32 verbose addNamed [ 'q', '1.1.2' ]
+33 verbose addNamed [ '1.1.2', '1.1.2' ]
+34 silly lockFile e953b1ec-q-1-1-2 q@1.1.2
+35 verbose lock q@1.1.2 /Users/alfioemanuele/.npm/e953b1ec-q-1-1-2.lock
+36 silly lockFile cf0717ec-registry-npmjs-org-q-q-1-1-2-tgz https://registry.npmjs.org/q/-/q-1.1.2.tgz
+37 verbose lock https://registry.npmjs.org/q/-/q-1.1.2.tgz /Users/alfioemanuele/.npm/cf0717ec-registry-npmjs-org-q-q-1-1-2-tgz.lock
+38 verbose addRemoteTarball [ 'https://registry.npmjs.org/q/-/q-1.1.2.tgz',
+38 verbose addRemoteTarball   '6357e291206701d99f197ab84e57e8ad196f2a89' ]
+39 info retry fetch attempt 1 at 10:54:42
+40 verbose fetch to= /var/folders/tx/68n2sg8s61g5n9m9yf0gg1gw0000gn/T/npm-3727-eR6kiEDB/registry.npmjs.org/q/-/q-1.1.2.tgz
+41 http GET https://registry.npmjs.org/q/-/q-1.1.2.tgz
+42 http 200 https://registry.npmjs.org/q/-/q-1.1.2.tgz
+43 silly lockFile cf0717ec-registry-npmjs-org-q-q-1-1-2-tgz https://registry.npmjs.org/q/-/q-1.1.2.tgz
+44 silly lockFile cf0717ec-registry-npmjs-org-q-q-1-1-2-tgz https://registry.npmjs.org/q/-/q-1.1.2.tgz
+45 silly lockFile e953b1ec-q-1-1-2 q@1.1.2
+46 silly lockFile e953b1ec-q-1-1-2 q@1.1.2
+47 silly lockFile f83edb5d-q q@
+48 silly lockFile f83edb5d-q q@
+49 error Error: EACCES, mkdir '/Users/alfioemanuele/.npm/q/1.1.2'
+49 error  { [Error: EACCES, mkdir '/Users/alfioemanuele/.npm/q/1.1.2']
+49 error   errno: 3,
+49 error   code: 'EACCES',
+49 error   path: '/Users/alfioemanuele/.npm/q/1.1.2',
+49 error   parent: 'unimib-chat-mobile' }
+50 error Please try running this command again as root/Administrator.
+51 error System Darwin 14.0.0
+52 error command "node" "/usr/local/bin/npm" "install" "q"
+53 error cwd /Users/alfioemanuele/Documents/workspace/unimib-chat-mobile
+54 error node -v v0.10.33
+55 error npm -v 1.4.28
+56 error path /Users/alfioemanuele/.npm/q/1.1.2
+57 error code EACCES
+58 error errno 3
+59 error stack Error: EACCES, mkdir '/Users/alfioemanuele/.npm/q/1.1.2'
+60 verbose exit [ 3, true ]

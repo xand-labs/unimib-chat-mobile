@@ -85,15 +85,30 @@
 
 
   <ion-footer-bar align-title="left" class="item-input-inset" ng-if="identificato">
-    <form class="item-input-wrapper" ng-submit="inviaMessaggio();">
+    
+        <button class="button button-small" 
+          ng-click="apriPopupDestinatari();" 
+          ng-class="{'button-positive': invia.length, 'button-assertive': !invia.length}"
+          style="margin-right: .2em;">
+          <span ng-if="invia.length == 0">
+            <i class="ion-alert-circled"></i>
+          </span> 
+          {{ invia.length }}
+          tag
+        </button> 
 
-      <i class="icon ion-paper-airplane placeholder-icon"></i>
 
-      <input type="text" ng-model="messaggio.testo" maxlenght="{{ messaggio.max }}" 
-        name="messaggio" placeholder="Scrivi un messaggio..." 
-        id="campo-testo" />
+      <form class="item-input-wrapper" ng-submit="inviaMessaggio();">
 
-    </form>
+        <i class="icon ion-paper-airplane placeholder-icon"></i>
+
+        <input type="text" ng-model="messaggio.testo" maxlenght="{{ messaggio.max }}" 
+          name="messaggio" placeholder="Scrivi un messaggio..." 
+          id="campo-testo" />
+
+      </form>
+
+
 	</ion-footer-bar>
 
 </ion-view>

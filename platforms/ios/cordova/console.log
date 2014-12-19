@@ -1919,3 +1919,83 @@
 2014-11-29 20:01:43.510 unimib-chat-mobile[18248:75138] l [object Object]
 2014-11-29 20:01:51.899 unimib-chat-mobile[18248:75138] u 1
 2014-11-29 20:01:55.509 unimib-chat-mobile[18248:75138] l [object Object]
+2014-11-29 20:02:01.899 unimib-chat-mobile[18248:75138] u 1
+2014-11-29 20:02:07.511 unimib-chat-mobile[18248:75138] l [object Object]
+2014-11-29 20:02:11.899 unimib-chat-mobile[18248:75138] u 1
+2014-11-29 20:02:19.510 unimib-chat-mobile[18248:75138] l [object Object]
+2014-11-29 20:02:21.899 unimib-chat-mobile[18248:75138] u 1
+2014-11-29 20:02:31.511 unimib-chat-mobile[18248:75138] l [object Object]
+2014-11-29 20:02:31.909 unimib-chat-mobile[18248:75138] u 1
+2014-11-29 20:02:41.909 unimib-chat-mobile[18248:75138] u 1
+2014-11-29 20:02:43.510 unimib-chat-mobile[18248:75138] l [object Object]
+2014-11-29 20:02:51.920 unimib-chat-mobile[18248:75138] u 1
+2014-11-29 20:02:55.511 unimib-chat-mobile[18248:75138] l [object Object]
+2014-11-29 20:03:01.919 unimib-chat-mobile[18248:75138] u 1
+2014-11-29 20:03:07.511 unimib-chat-mobile[18248:75138] l [object Object]
+2014-11-29 20:03:11.929 unimib-chat-mobile[18248:75138] u 1
+2014-11-29 20:03:19.510 unimib-chat-mobile[18248:75138] l [object Object]
+2014-11-29 20:03:21.929 unimib-chat-mobile[18248:75138] u 1
+2014-11-29 20:03:31.511 unimib-chat-mobile[18248:75138] l [object Object]
+2014-11-29 20:03:32.005 unimib-chat-mobile[18248:75138] u 1
+2014-11-29 20:03:41.940 unimib-chat-mobile[18248:75138] u 1
+2014-11-29 20:03:43.509 unimib-chat-mobile[18248:75138] l [object Object]
+2014-11-29 20:03:51.940 unimib-chat-mobile[18248:75138] u 1
+2014-11-29 20:03:55.510 unimib-chat-mobile[18248:75138] l [object Object]
+2014-11-29 20:04:01.950 unimib-chat-mobile[18248:75138] u 1
+2014-11-29 20:04:07.511 unimib-chat-mobile[18248:75138] l [object Object]
+2014-11-29 20:04:11.950 unimib-chat-mobile[18248:75138] u 1
+2014-11-29 20:04:19.511 unimib-chat-mobile[18248:75138] l [object Object]
+2014-11-29 20:04:21.960 unimib-chat-mobile[18248:75138] u 1
+2014-11-29 20:04:31.511 unimib-chat-mobile[18248:75138] l [object Object]
+2014-11-29 20:04:31.962 unimib-chat-mobile[18248:75138] u 1
+2014-11-29 20:04:41.961 unimib-chat-mobile[18248:75138] u 1
+2014-11-29 20:04:43.512 unimib-chat-mobile[18248:75138] l [object Object]
+2014-11-29 20:04:51.970 unimib-chat-mobile[18248:75138] u 1
+2014-11-29 20:04:55.511 unimib-chat-mobile[18248:75138] l [object Object]
+2014-11-29 20:05:01.972 unimib-chat-mobile[18248:75138] u 1
+2014-11-29 20:05:07.521 unimib-chat-mobile[18248:75138] l [object Object]
+2014-11-29 20:05:11.971 unimib-chat-mobile[18248:75138] u 1
+2014-11-29 20:05:19.522 unimib-chat-mobile[18248:75138] l [object Object]
+2014-11-29 20:05:21.981 unimib-chat-mobile[18248:75138] u 1
+2014-11-29 20:05:31.522 unimib-chat-mobile[18248:75138] l [object Object]
+2014-11-29 20:05:31.981 unimib-chat-mobile[18248:75138] u 1
+2014-11-29 20:05:41.981 unimib-chat-mobile[18248:75138] u 1
+2014-11-29 20:05:43.522 unimib-chat-mobile[18248:75138] l [object Object]
+2014-11-29 20:05:50.350 unimib-chat-mobile[18248:75138] THREAD WARNING: ['Notification'] took '30.118164' ms. Plugin should use a background thread.
+2014-11-29 20:05:51.990 unimib-chat-mobile[18248:75138] u 1
+2014-11-29 20:05:52.324 unimib-chat-mobile[18248:75138] THREAD WARNING: ['Notification'] took '17.860352' ms. Plugin should use a background thread.
+2014-11-29 20:05:55.521 unimib-chat-mobile[18248:75138] l [object Object]
+2014-11-29 20:06:01.992 unimib-chat-mobile[18248:75138] u 1
+2014-11-29 20:06:07.521 unimib-chat-mobile[18248:75138] l [object Object]
+2014-11-29 20:06:11.992 unimib-chat-mobile[18248:75138] u 1
+2014-11-29 20:06:19.523 unimib-chat-mobile[18248:75138] l [object Object]
+2014-11-29 20:06:22.002 unimib-chat-mobile[18248:75138] u 1
+2014-11-29 20:06:23.674 unimib-chat-mobile[18248:75138] - test11
+2014-11-29 20:06:23.674 unimib-chat-mobile[18248:75138] t test1,test2,test3,test4,test5,test6,test7,test8,test9,test10,test12
+2014-11-29 20:06:23.925 unimib-chat-mobile[18248:75138] - test10
+2014-11-29 20:06:23.925 unimib-chat-mobile[18248:75138] @ Disconnect Sat Nov 29 2014 20:06:23 GMT+0000 (GMT)
+2014-12-19 10:25:13.004 unimib-chat-mobile[900:9335] Apache Cordova native platform version 3.7.0 is starting.
+2014-12-19 10:25:13.007 unimib-chat-mobile[900:9335] Multi-tasking -> Device: YES, App: YES
+2014-12-19 10:25:13.023 unimib-chat-mobile[900:9335] Unlimited access to network resources
+2014-12-19 10:25:13.331 unimib-chat-mobile[900:9335] [CDVTimer][keyboard] 0.065982ms
+2014-12-19 10:25:13.331 unimib-chat-mobile[900:9335] [CDVTimer][TotalPluginStartup] 0.264049ms
+2014-12-19 10:25:13.583 unimib-chat-mobile[900:9335] Resetting plugins due to page load.
+2014-12-19 10:25:14.036 unimib-chat-mobile[900:9335] Finished load of: file:///Users/alfioemanuele/Library/Developer/CoreSimulator/Devices/269A5675-07AC-41CE-81D7-B86630AF9A50/data/Containers/Bundle/Application/A07E85E8-E8EB-43CC-8FBF-74774960ED87/unimib-chat-mobile.app/www/index.html#/app/storico
+2014-12-19 10:25:41.239 unimib-chat-mobile[900:9335] Setting the WebView's frame to {{0, 0}, {375, 623}}
+2014-12-19 10:25:41.240 unimib-chat-mobile[900:9335] Setting the WebView's frame to {{0, 0}, {375, 667}}
+2014-12-19 10:25:41.254 unimib-chat-mobile[900:9335] THREAD WARNING: ['InAppBrowser'] took '211.819824' ms. Plugin should use a background thread.
+2014-12-19 10:25:41.296 unimib-chat-mobile[900:9335] Error in Success callbackId: InAppBrowser1677134378 : TypeError: null is not an object (evaluating 'event.type')
+2014-12-19 10:25:48.179 unimib-chat-mobile[900:9335] webView:didFailLoadWithError - -1004: Could not connect to the server.
+2014-12-19 10:27:41.347 unimib-chat-mobile[1340:11877] Apache Cordova native platform version 3.7.0 is starting.
+2014-12-19 10:27:41.349 unimib-chat-mobile[1340:11877] Multi-tasking -> Device: YES, App: YES
+2014-12-19 10:27:41.351 unimib-chat-mobile[1340:11877] Unlimited access to network resources
+2014-12-19 10:27:41.576 unimib-chat-mobile[1340:11877] [CDVTimer][keyboard] 0.105977ms
+2014-12-19 10:27:41.576 unimib-chat-mobile[1340:11877] [CDVTimer][TotalPluginStartup] 0.376046ms
+2014-12-19 10:27:41.654 unimib-chat-mobile[1340:11877] Resetting plugins due to page load.
+2014-12-19 10:27:41.916 unimib-chat-mobile[1340:11877] Finished load of: file:///Users/alfioemanuele/Library/Developer/CoreSimulator/Devices/269A5675-07AC-41CE-81D7-B86630AF9A50/data/Containers/Bundle/Application/2B2DF7F7-23AB-4122-82CB-CAE0C28F58EA/unimib-chat-mobile.app/www/index.html#/app/storico
+2014-12-19 10:28:05.864 unimib-chat-mobile[1340:11877] Setting the WebView's frame to {{0, 0}, {375, 623}}
+2014-12-19 10:28:05.864 unimib-chat-mobile[1340:11877] Setting the WebView's frame to {{0, 0}, {375, 667}}
+2014-12-19 10:28:05.872 unimib-chat-mobile[1340:11877] THREAD WARNING: ['InAppBrowser'] took '180.911865' ms. Plugin should use a background thread.
+2014-12-19 10:28:05.900 unimib-chat-mobile[1340:11877] Error in Success callbackId: InAppBrowser1866906672 : TypeError: null is not an object (evaluating 'event.type')
+2014-12-19 10:28:06.496 unimib-chat-mobile[1340:11877] webView:didFailLoadWithError - -1004: Could not connect to the server.
+2014-12-19 10:28:48.353 unimib-chat-mobile[1340:12267] Terminating since there is no system app.

@@ -16,7 +16,7 @@ const TOO_MANY    = 4;
 function CClient() {
 	this.io			= null;						
 	this.refresh 	= 12000; 					// Refresh time (tag list)
-	this.endpoint 	= 'http://alacriter-dev.uk:8080';
+	this.endpoint 	= 'http://46.37.5.139';
 	this.identity 	= {
 		max_length: 	0,
 		nickname: 		null,
