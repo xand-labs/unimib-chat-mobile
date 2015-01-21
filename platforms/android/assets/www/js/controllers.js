@@ -24,7 +24,16 @@ angular.module('starter.controllers', [])
     nickname:   '',
     realname:   '',
   };
-  $scope.volume       = true;
+
+  $scope.volume_possibili = {
+    "tutti":      "Tutti i msgg.",
+    "importanti": "Msgg. importanti",
+    "nessuno":    "Nessun msg."
+  };
+
+  $scope.volume       = {
+    valore:  "tutti"
+  };
 
   $scope.seguiti      = [];
   $scope.invia        = [];
@@ -153,7 +162,7 @@ angular.module('starter.controllers', [])
     receive:    function (important, author, reply, tags, body, date) {
       DEBUG && console.log('<', important, author, reply, tags, body, date);
       $scope.storico.aggiungi_msg(important, reply, date, tags, author, body);
-      $scope.ui.notifica();
+      $scope.ui.notifica(important);
       $scope.$apply();
 
     },
@@ -326,7 +335,19 @@ angular.module('starter.controllers', [])
 
     scorri_fondo:     function () {
       setTimeout(function() {
+        
+        $(".messaggio").linkify({
+          tagName: 'a',
+          target: '_blank',
+          newLine: '\n',
+          linkClass: null,
+          linkAttributes: {
+            onclick: 'javascript:window.open(this.href,\'_system\',\'location=yes\');return false;'
+          }
+        });
         $ionicScrollDelegate.$getByHandle('scrollabile').scrollBottom(true);
+
+
       }, 150);
     },
 
@@ -401,10 +422,14 @@ angular.module('starter.controllers', [])
 
     },
 
-    notifica: function() {
+    notifica: function(important) {
       if ( navigator.notification.beep && navigator.notification.vibrate ) {
         // ASYNC!
-        if ( $scope.volume ) {
+        if ( 
+                $scope.volume.valore == "tutti" 
+            ||  ($scope.volume.valore == "importanti" && important)
+         ) {
+          console.log("RIproduco il suono, " + $scope.volume.valore);
           setTimeout(function() {
             navigator.notification.beep(1);
           }, ASYNC);
