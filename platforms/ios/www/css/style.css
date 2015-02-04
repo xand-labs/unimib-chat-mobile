@@ -1,6 +1,22 @@
+
+.side-menu {
+	background: url("../img/pat.png") repeat;
+}
+
+.segui {
+	background: url("../img/4651653307_6b7ddc7c79_o2.jpg") center center fixed;
+	background-size: cover;
+}
+
+.tag {
+	background: linear-gradient(to bottom,  #e68700 0%,#e2a200 9%,#e68700 100%) !important;
+	color: white;
+	text-shadow: 0 1px 0 rgba(90,90,90,.8);
+}
+
 .data {
 	color: gray;
-	font-size: x-small;
+	font-size: 40%;
 }
 
 .autore {
@@ -10,6 +26,10 @@
 
 .sys .messaggio {
 	color: #C00;
+}
+
+.messaggio {
+	font-size: 110%;
 }
 
 .join .messaggio, .leave .messaggio {

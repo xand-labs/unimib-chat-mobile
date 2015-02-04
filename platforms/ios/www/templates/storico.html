@@ -36,7 +36,7 @@
                 <div ng-if="msg.autore"  class="col col-33 autore autore-altrui" ng-bind-html="ui.renderNick(msg.autore)"></div>
                 <div ng-if="!msg.autore" class="col col-33 autore autore-me">Sconosciuto</div>
                 <div class="col col-50 tags">
-                  <span class="tag tag-jl" ng-repeat="tag in msg.tags">#{{tag}}</span>
+                  <span class="tag tag-jl" ng-repeat="tag in msg.tags" ng-click="ui.clicktag(tag);">#{{tag}}</span>
                 </div>
               </div>
               <div class="row azzerapadding niente-padding-sopra figli-niente-padding-sopra">
@@ -48,13 +48,13 @@
             <!-- Join -->
             <div ng-if="msg.tipo == 'join'" class="col col-90 messaggio">
               <i class="ion-plus-circled"></i> Hai iniziato a seguire: 
-              <span class="tag tag-jl" ng-repeat="tag in msg.tags">#{{tag}}</span>
+              <span class="tag tag-jl" ng-repeat="tag in msg.tags" ng-click="ui.clicktag(tag);">#{{tag}}</span>
             </div>
 
             <!-- Leave -->
             <div ng-if="msg.tipo == 'leave'" class="col col-90 messaggio">
               <i class="ion-minus-circled"></i> Smesso di seguire: 
-              <span class="tag tag-jl" ng-repeat="tag in msg.tags">#{{tag}}</span>
+              <span class="tag tag-jl" ng-repeat="tag in msg.tags" ng-click="ui.clicktag(tag);">#{{tag}}</span>
             </div>
 
             <!-- Sistema -->

@@ -7,7 +7,7 @@
     <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
   </ion-pane>
 
-  <ion-side-menu side="left">
+  <ion-side-menu side="left" class="side-menu">
     <header class="bar bar-header bar-stable">
       <h1 class="title">Men&ugrave;</h1>
     </header>
@@ -24,10 +24,24 @@
           </span>
         </ion-item>
 
+
+        <label class="item item-input item-select item-icon-left">
+          <i class="icon ion-volume-medium"></i>
+
+          <div class="input-label">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Audio
+          </div>
+          <select ng-model="volume.valore" ng-options="key as value for (key, value) in volume_possibili"></select>
+        </label>
+
+
+
+        <!-- 
         <ion-toggle class="item-icon-left item-toggle" toggle-class="toggle-assertive" ng-model="volume">
           <i class="icon ion-volume-medium"></i>
           Audio notifica
-        </ion-toggle>
+        </ion-toggle> -->
 
         <!-- <ion-item class="item-icon-left" menu-close  href="#/app/invia">
           <i class="icon ion-speakerphone"></i>

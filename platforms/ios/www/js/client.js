@@ -16,7 +16,7 @@ const TOO_MANY    = 4;
 function CClient() {
 	this.io			= null;						
 	this.refresh 	= 12000; 					// Refresh time (tag list)
-	this.endpoint 	= 'http://46.37.5.139';
+	this.endpoint 	= 'CHANGEME-controllers.js';
 	this.identity 	= {
 		max_length: 	0,
 		nickname: 		null,
