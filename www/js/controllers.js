@@ -70,7 +70,7 @@ angular.module('starter.controllers', [])
       return;
     }
 
-    var rid = $scope.storico.aggiungi_msg(false, null, (new Date), $scope.invia, $scope.identita.nickname, $scope.messaggio.testo);
+    var rid = $scope.storico.aggiungi_msg(false, null, (new Date), $scope.invia, $scope.identita.nickname, $scope.messaggio.testo, true);
     //    CClient.prototype.send = function(tags, body, reply, callback_ok, callback_error) {
     $scope.client.send($scope.invia, $scope.messaggio.testo, null,
       function(visibile) {
@@ -161,7 +161,7 @@ angular.module('starter.controllers', [])
 
     receive:    function (important, author, reply, tags, body, date) {
       DEBUG && console.log('<', important, author, reply, tags, body, date);
-      $scope.storico.aggiungi_msg(important, reply, date, tags, author, body);
+      $scope.storico.aggiungi_msg(important, reply, date, tags, author, body, false);
       $scope.ui.notifica(important);
       $scope.$apply();
 
@@ -273,7 +273,10 @@ angular.module('starter.controllers', [])
      }
      return rid
      */
-    aggiungi: function(data, tipo, messaggio, autore, tags) {
+    aggiungi: function(data, tipo, messaggio, autore, tags, mio) {
+      if ( mio == undefined ) {
+        mio = false;
+      }
       var rid = Math.floor( Math.random() * 9999999 );
       $scope.messaggi.push({
         rid: rid,
@@ -281,7 +284,9 @@ angular.module('starter.controllers', [])
         tipo: tipo,
         messaggio: messaggio,
         autore: autore,
-        tags: tags
+        tags: tags,
+        mio: mio,
+        anonimo: (autore.indexOf("@") == -1)
       });
       return rid;
     },
@@ -319,12 +324,12 @@ angular.module('starter.controllers', [])
     },
 
 
-    aggiungi_msg:     function (importante, risposta, data, tags, autore, messaggio, muto) {
+    aggiungi_msg:     function (importante, risposta, data, tags, autore, messaggio, mio) {
       messaggio = $("<div />").text(messaggio).html();
       if ( risposta ) {
         messaggio = "@" + risposta + ": " + messaggio;
       }
-      var rid = $scope.storico.aggiungi(data, "msg", messaggio, autore, tags);
+      var rid = $scope.storico.aggiungi(data, "msg", messaggio, autore, tags, mio);
       $scope.storico.scorri_fondo();
       return rid;
     },
