@@ -30,11 +30,13 @@
             <div class="col col-10 data" ng-if="msg.tipo != 'msg'">{{ msg.data | date: 'H:mm' }}</div>
 
             <!-- Messaggi normali -->
-            <div class="col col-100 azzerapadding messaggio-mio" ng-if="msg.tipo == 'msg'">
+            <div class="col col-100 azzerapadding contenitore-messaggio" 
+            ng-class="{'msg-nickname': msg.anonimo, 'msg-nomereale': !msg.anonimo, 'msg-mio': msg.mio, 'msg-altrui': !msg.mio}" 
+            ng-if="msg.tipo == 'msg'">
               <div class="row azzerapadding niente-padding-sotto figli-niente-padding-sotto">
                 <div class="col col-10 data">{{ msg.data | date: 'H:mm' }}</div>
-                <div ng-if="msg.autore" class="col col-33 autore autore-altrui" ng-bind-html="ui.renderNick(msg.autore)"></div>
-                <div ng-if="!msg.autore" class="col col-33 autore autore-me">Sconosciuto</div>
+                <div ng-if="msg.autore" class="col col-33 autore autore-conosciuto" ng-bind-html="ui.renderNick(msg.autore)"></div>
+                <div ng-if="!msg.autore" class="col col-33 autore autore-sconosciuto">Sconosciuto</div>
                 <div class="col col-50 tags">
                   <i>ha scritto su</i>
                   <span class="tag tag-jl" ng-repeat="tag in msg.tags" ng-click="ui.clicktag(tag);">#{{tag}}</span>

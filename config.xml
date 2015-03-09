@@ -16,4 +16,63 @@
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
   </feature>
+
+  <platform name="ios">
+    <!-- iOS 7.0+ -->
+    <!-- iPhone / iPod Touch -->
+    <icon src="icons/ios/icon-60.png" width="60" height="60" />
+    <icon src="icons/ios/icon-60@2x.png" width="120" height="120" />
+    <!-- iPad -->
+    <icon src="icons/ios/icon-76.png" width="76" height="76" />
+    <icon src="icons/ios/icon-76@2x.png" width="152" height="152" />
+    <!-- iOS 6.1 -->
+    <!-- Spotlight Icon -->
+    <icon src="icons/ios/icon-40.png" width="40" height="40" />
+    <icon src="icons/ios/icon-40@2x.png" width="80" height="80" />
+    <!-- iPhone / iPod Touch -->
+    <icon src="icons/ios/icon.png" width="57" height="57" />
+    <icon src="icons/ios/icon@2x.png" width="114" height="114" />
+    <!-- iPad -->
+    <icon src="icons/ios/icon-72.png" width="72" height="72" />
+    <icon src="icons/ios/icon-72@2x.png" width="144" height="144" />
+    <!-- iPhone Spotlight and Settings Icon -->
+    <icon src="icons/ios/icon-small.png" width="29" height="29" />
+    <icon src="icons/ios/icon-small@2x.png" width="58" height="58" />
+    <!-- iPad Spotlight and Settings Icon -->
+    <icon src="icons/ios/icon-50.png" width="50" height="50" />
+    <icon src="icons/ios/icon-50@2x.png" width="100" height="100" />
+  </platform>
+
+  <platform name="android">
+    <!-- google play store -->
+    <icon src="icons/android/google-play.png" width="512" height="512" />
+    <!-- ldpi -->
+    <icon src="icons/android/ldpi/ic_dialog.png" width="24" height="24" />
+    <icon src="icons/android/ldpi/ic_launcher.png" width="36" height="36" />
+    <icon src="icons/android/ldpi/ic_list.png" width="24" height="24" />
+    <icon src="icons/android/ldpi/ic_menu.png" width="18" height="18" />
+    <icon src="icons/android/ldpi/ic_status.png" width="18" height="18" />
+    <icon src="icons/android/ldpi/ic_tab.png" width="24" height="24" />
+    <!-- mdpi -->
+    <icon src="icons/android/mdpi/ic_dialog.png" width="32" height="32" />
+    <icon src="icons/android/mdpi/ic_launcher.png" width="48" height="48" />
+    <icon src="icons/android/mdpi/ic_list.png" width="32" height="32" />
+    <icon src="icons/android/mdpi/ic_menu.png" width="24" height="24" />
+    <icon src="icons/android/mdpi/ic_status.png" width="24" height="24" />
+    <icon src="icons/android/mdpi/ic_tab.png" width="32" height="32" />
+    <!-- hdpi -->
+    <icon src="icons/android/hdpi/ic_dialog.png" width="48" height="48" />
+    <icon src="icons/android/hdpi/ic_launcher.png" width="72" height="72" />
+    <icon src="icons/android/hdpi/ic_list.png" width="48" height="48" />
+    <icon src="icons/android/hdpi/ic_menu.png" width="36" height="36" />
+    <icon src="icons/android/hdpi/ic_status.png" width="36" height="36" />
+    <icon src="icons/android/hdpi/ic_tab.png" width="48" height="48" />
+    <!-- xhdpi -->
+    <icon src="icons/android/xhdpi/ic_dialog.png" width="64" height="64" />
+    <icon src="icons/android/xhdpi/ic_launcher.png" width="96" height="96" />
+    <icon src="icons/android/xhdpi/ic_list.png" width="64" height="64" />
+    <icon src="icons/android/xhdpi/ic_menu.png" width="48" height="48" />
+    <icon src="icons/android/xhdpi/ic_status.png" width="48" height="48" />
+    <icon src="icons/android/xhdpi/ic_tab.png" width="64" height="64" />
+  </platform>
 </widget>
