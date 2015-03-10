@@ -14,9 +14,9 @@
 
 .success {background-color: #B9C8FF;}
 .important {background-color: rgba(250, 250, 200, 0.5);}
-.messaggio-mio {
-	margin-top: 7px; background-color: rgba(255, 190, 50, 0.25);
-}
+.msg-altrui, .msg-mio, .msg-nickname, .msg-nomereale {margin-top: 7px;}
+.msg-mio {background-color: rgba(255, 190, 50, 0.25);}
+.msg-nickname {background-color: rgba(165, 165, 165, 0.3);}
 
 .tag {
 	background: linear-gradient(to bottom,  #e68700 0%,#e2a200 9%,#e68700 100%) !important;
