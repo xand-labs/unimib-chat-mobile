@@ -9,7 +9,7 @@ var ASYNC             = 75; // ms delay
 
 var REGEX_TAG   = /^[a-z0-9\-]{2,20}$/;
 var REGEX_NICK  = /^[a-zA-Z0-9\-]{6,20}$/;
-var HOST        = 'http://46.37.5.139';
+var HOST        = 'http://bchat.studentibicocca.com/';
 
 angular.module('starter.controllers', [])
 
